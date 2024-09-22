@@ -13,6 +13,13 @@ app.use(bodyParser.json());
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+// GET route to return operation code 1
+app.get('/bfhl', (req, res) => {
+  res.status(200).json({
+    operation_code: 1
+  });
+});
+
 // POST route
 app.post('/bfhl', upload.single('file'), (req, res) => {
   const { data } = req.body;
