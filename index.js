@@ -1,9 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+const cors = require('cors'); // Import cors
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Middleware to parse JSON and form-data
 app.use(bodyParser.urlencoded({ extended: true }));
